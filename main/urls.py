@@ -7,6 +7,7 @@ urlpatterns = [
     path('my_info/<int:teacher_id>/', views.getTeacherInfo, name="Get My Info"), 
     path('my_students/<int:teacher_id>/', views.getAllStudents, name="Get My Students"), 
     path('create_student/', views.createStudent, name="Create Student"), 
+    path('student_grades/<int:student_id>/', views.getStudentGrades, name="Get Student Grades"), 
     path('add_grade/', views.addGrade, name="Add Grade"), 
     path('my_grades/<int:teacher_id>/', views.getMyGrades, name="Get My Grades"), 
     path('create_assignment/', views.createAssignment, name="Create Assignment"), 

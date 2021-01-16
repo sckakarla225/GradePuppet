@@ -14,7 +14,8 @@ def apiOverview(request):
         "Create New Teacher": "create_teacher/", 
         "Get My Info": "my_info/<int:teacher_id>/", 
         "Get My Students": "my_students/<int:teacher_id>/", 
-        "Create New Student": "create_student/", 
+        "Create New Student": "create_student/",
+        "Get Student Grades": "student_grades/<int:student_id>/",  
         "Add Grade": "add_grade/", 
         "Get My Grades": "my_grades/<int:teacher_id>/", 
         "Create Assignment": "create_assignment/", 
@@ -85,6 +86,14 @@ def createStudent(request):
         return Response(data={
             "No": "Student already exists"
         })
+
+
+@api_view(['GET'])
+def getStudentGrades(request, student_id):
+    grades = Grade.objects.filter(student=student_id)
+    serializer = GetGradesSerializer(grades, many=True)
+
+    return Response(serializer.data)
 
 
 @api_view(['POST'])
