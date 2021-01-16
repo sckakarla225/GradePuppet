@@ -26,25 +26,35 @@ def apiOverview(request):
 @api_view(['POST'])
 def createTeacher(request):
     teacher = request.data 
-    name = teacher["name"]
-    teacher_obj = Teacher.objects.get(name=name)
+    # name = teacher["name"]
+    # teacher_obj = Teacher.objects.get(name=name)
 
-    if teacher_obj.DoesNotExist:
-        serializer = CreateTeacherSerializer(data=teacher)
+    # if teacher_obj.DoesNotExist:
+    #     serializer = CreateTeacherSerializer(data=teacher)
 
-        if serializer.is_valid(raise_exception=True):
-            serializer.save()
-            return Response(data={
-                "success": "Teacher was created"
-            })
-        else:
-            return Response(data={
-                "failure": "Teacher not created"
-            })
+    #     if serializer.is_valid(raise_exception=True):
+    #         serializer.save()
+    #         return Response(data={
+    #             "success": "Teacher was created"
+    #         })
+    #     else:
+    #         return Response(data={
+    #             "failure": "Teacher not created"
+    #         })
+    # else:
+    #     return Response(data={
+    #         "No": "Teacher already exists"
+    #     })
+    serializer = CreateTeacherSerializer(data=teacher)
+
+    if serializer.is_valid(raise_exception=True):
+        serializer.save()
+        return Response(serializer.data)
     else:
         return Response(data={
-            "No": "Teacher already exists"
+            "failure": "Teacher not created"
         })
+
 
 
 @api_view(['GET'])
@@ -79,9 +89,7 @@ def createStudent(request):
                 "success": "Student created"
             })
         else:
-            return Response(data={
-                "failure": "Student not created"
-            })
+            return Response(serializer.data)
     else:
         return Response(data={
             "No": "Student already exists"
@@ -108,9 +116,7 @@ def addGrade(request):
 
     if serializer.is_valid(raise_exception=True):
         serializer.save()
-        return Response(data={
-            "success": "Grade Added"
-        })
+        return Response(serializer.data)
     else:
         return Response(data={
             "failure": "Graded not added"
@@ -133,9 +139,7 @@ def createAssignment(request):
 
     if serializer.is_valid(raise_exception=True):
         serializer.save()
-        return Response(data={
-            "success": "Assignment created"
-        })
+        return Response(serializer.data)
     else:
         return Response(data={
             "failure": "Assignment not created"

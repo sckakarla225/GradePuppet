@@ -1,9 +1,9 @@
 import React from 'react'; 
 
-export const Dashboard = () => {
+export const Navbar = () => {
     return (
         <div>
-            <h1>DASHBOARD</h1>
+            
         </div>
     )
 }
