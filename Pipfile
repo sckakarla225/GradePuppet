@@ -9,6 +9,13 @@ verify_ssl = true
 django = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+django-environ = "*"
+celery = "*"
+redis = "*"
+django-celery-beat = "*"
+djangorestframework-simplejwt = "*"
+djoser = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
