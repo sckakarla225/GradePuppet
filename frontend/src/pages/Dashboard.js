@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react';
 
 import { GradeContext } from '../context/GradeContext';
 
-export const Dashboard = () => {
+export const Dashboard = (props) => {
     const { teacher, students, getAssignments, getGrades, getStudents } = useContext(GradeContext); 
 
     useEffect(() => {
@@ -11,17 +11,13 @@ export const Dashboard = () => {
         getStudents(teacher.id); 
     }, []); 
 
+    const studentPage = (studentID) => {
+      props.history.push(`/student/${studentID}`);
+    }
+
     return (
-        <div>
-            <h1>DASHBOARD</h1>
-            {students ? students.map((student) => {
-                return (
-                    <div>
-                        <p>{student.name}</p>
-                        <button>{">"}</button>
-                    </div>
-                )
-            }) : ""}
-        </div>
+      <div>
+        
+      </div>
     )
 }

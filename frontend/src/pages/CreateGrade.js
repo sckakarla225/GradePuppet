@@ -54,10 +54,7 @@ export const CreateGrade = () => {
 
     return (
         <div>
-            <h1>CREATE GRADE</h1>
-            {isLoading ? "" : (
-                <p>{grade}</p>
-            )}
+            
         </div>
     )
 }

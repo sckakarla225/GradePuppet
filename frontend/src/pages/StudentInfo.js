@@ -27,21 +27,9 @@ export const StudentInfo = () => {
         getStudentGrades(); 
     }, []); 
 
-    // Add student mastery level 
-
     return (
         <div>
-            <h1>STUDENT INFO</h1>
-            <p>{student.name}</p>
-            <p>GRADES</p>
-            {studentGrades ? studentGrades.map((grade) => {
-                return (
-                    <div>
-                        <p>{grade.assignment.name}</p>
-                        <p>{grade.student.name}</p>
-                    </div>
-                )
-            }) : ""}
+            
         </div>
     )
 }

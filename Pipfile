@@ -16,6 +16,7 @@ django-celery-beat = "*"
 djangorestframework-simplejwt = "*"
 djoser = "*"
 psycopg2 = "*"
+nltk = "*"
 
 [requires]
 python_version = "3.8"

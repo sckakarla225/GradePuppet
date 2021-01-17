@@ -11,7 +11,7 @@ export const GradeContextProvider = (props) => {
 
     const getStudents = (teacher_id) => {
         fetch(`http://127.0.0.1:8000/api/my_students/${teacher_id}/`).then(
-            () => response.json()
+            (response) => response.json()
         ).then((data) => {
             console.log(data); 
             console.log("Teacher students recieved successfully!"); 
@@ -21,7 +21,7 @@ export const GradeContextProvider = (props) => {
 
     const getGrades = (teacher_id) => {
         fetch(`http://127.0.0.1:8000/api/my_grades/${teacher_id}/`).then(
-            () => response.json()
+            (response) => response.json()
         ).then((data) => {
             console.log(data); 
             console.log("Teacher grades recieved successfully!"); 
@@ -31,7 +31,7 @@ export const GradeContextProvider = (props) => {
 
     const getAssignments = (teacher_id) => {
         fetch(`http://127.0.0.1:8000/api/my_assignments/${teacher_id}/`).then(
-            () => response.json()
+            (response) => response.json()
         ).then((data) => {
             console.log(data); 
             console.log("Teacher assignments recieved successfully!"); 

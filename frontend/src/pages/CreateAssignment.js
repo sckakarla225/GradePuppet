@@ -32,8 +32,8 @@ export const CreateAssignment = () => {
     // Format Rubric Function to send to DB
     
     return (
-        <div>
-            <h1>CREATE ASSIGNMENT</h1>
+        <div id="e9_47">
+            
         </div>
     )
 }
