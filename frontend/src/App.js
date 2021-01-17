@@ -26,6 +26,7 @@ function App() {
                 <Route exact path="/assignment" component={CreateAssignment} />
                 <Route exact path="/grade" component={CreateGrade} />
                 <Route exact path="/teacher" component={TeacherInfo} />
+                <Route exact path="/student/:studentID" component={StudentInfo} />
             </Switch>
         </div>
       </Router>

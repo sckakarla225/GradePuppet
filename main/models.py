@@ -18,15 +18,6 @@ class Student(models.Model):
     def __str__(self):
         return self.name + "- " + self.teacher.name
 
-class Grade(models.Model):
-    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    content = models.TextField(blank=False, null=True)
-    grade = models.DecimalField(validators=[MinValueValidator(0.0), MaxValueValidator(100.00)], max_digits=5, decimal_places=2)
-
-    def __str__(self):
-        return self.grade + "- " + self.student
-
 class Assignment(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     name = models.CharField(max_length=255, blank=False, null=True)
@@ -34,6 +25,16 @@ class Assignment(models.Model):
 
     def __str__(self):
         return self.teacher.name + "- " + self.name
+
+class Grade(models.Model):
+    teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    student = models.ForeignKey(Student, on_delete=models.CASCADE)
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
+    content = models.TextField(blank=False, null=True)
+    grade = models.DecimalField(validators=[MinValueValidator(0.0), MaxValueValidator(100.00)], max_digits=5, decimal_places=2)
+
+    def __str__(self):
+        return self.grade + "- " + self.student
 
     
 
