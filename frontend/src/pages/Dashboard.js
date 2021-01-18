@@ -36,7 +36,7 @@ export const Dashboard = (props) => {
     return (
       <div style={{ backgroundColor: ''}}>
           <Grid container spacing={4}>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={5}>
                 <div>
                   <ClassMastery />
                 </div>
@@ -44,7 +44,7 @@ export const Dashboard = (props) => {
                   <StudentsDB />
                 </div>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12} sm={7}>
                 <div>
                   <AssignmentDB />
                 </div>

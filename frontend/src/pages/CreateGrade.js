@@ -4,7 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 // COMPONENTS
-import { Grade } from '../components/Grades/Content'; 
+import { Content } from '../components/Grades/Content'; 
 
 // CONTEXT
 import { GradeContext } from '../context/GradeContext';

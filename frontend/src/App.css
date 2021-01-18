@@ -73,6 +73,88 @@
 }
 
 /* DASHBOARD */
+.numberCircle {
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    padding: 8px;
+
+    background: #fff;
+    border: 2px solid #666;
+    color: #666;
+    text-align: center;
+
+    font-size: 250px;
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 280px;
+    margin-top: 35px; 
+}
+
+#class-mastery-level {
+    text-align: center;
+    font-size: 25px;
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.students-db-container {
+    height: 340px;
+    width: 615px;
+    background-color: white;
+    margin-left: 170px;
+    margin-top: 45px;
+    border-radius: 20px; 
+    border: 2px solid black;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+#assignment-db-container {
+    height: 375px;
+    width: 850px;
+    background-color: white;
+    margin-left: 55px;
+    margin-top: 45px;
+    border-radius: 20px; 
+    border: 2px solid black;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+#grade-db-container {
+    height: 365px;
+    width: 850px;
+    background-color: white;
+    margin-left: 55px;
+    margin-top: 45px;
+    border-radius: 20px; 
+    border: 2px solid black;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+#db-p-tag {
+    font-size: 25px;
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal; 
+}
+
+#go-button {
+    float: right;
+    margin-right: 50px;
+    margin-top: 70px;
+    text-decoration: none;
+    height: 75px;
+    width: 125px;
+    background-color:rgba(151, 206, 176, 0.3);
+    text-align: center;
+    font-size: 45px;
+    color: black;
+}
 
 /* ASSIGNMENTS */
 
