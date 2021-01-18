@@ -29,7 +29,7 @@ class Assignment(models.Model):
 class Grade(models.Model):
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
-    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE)
+    assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE, default=1)
     content = models.TextField(blank=False, null=True)
     grade = models.DecimalField(validators=[MinValueValidator(0.0), MaxValueValidator(100.00)], max_digits=5, decimal_places=2)
 

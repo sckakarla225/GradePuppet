@@ -28,6 +28,40 @@ student_answer_2 = """
 One way that gentrification may negatively impact neighborhoods is by forcing out the original tenents. Before gentrification occurs the neighborhood is mostly composed of people of lower income. After gentrification, property rates will increase along with housing rates. Now the original tenents with a lower income will no longer be able to afford to live there and will have to move out. Another way gentrification may negatively impact neighborhoods is by loss of historical aspects and buildings. In the process of renovating the neighborhood, older building with historical importance may be torn down to be replaced with newer buildings. This may lead to placelessness since the neighborhood is losing part of its uniqueness and identity.
 """
 
+studentresponseg = """
+Gentrification causes a positive impact because all of the unwanted people move out.
+"""
+
+rubricg = """
+Q1: Explain TWO Ways that gentrification may positively impact neighborhoods.
+
+A1: Increasing property values or as properties are renovated they rise in value + 
+        Increasing tax base; as properties are renovated they are reappraised for higher property tax values + 
+        Stimulating new businesses and/or investment. New businesses are attracted to the area due to increased
+        incomes of new residents and/or increased tourism +
+        New employment either in construction (short term) or in the new businesses that open (longer term) +
+        Changing cultural landscape as a result of restoration efforts, aesthetic improvement of older or decaying
+        structures, neighborhood rehabilitation, or historical preservation of structures or neighborhoods +
+        Improvement in business services and consumer, resident, or visitor amenities (e.g. young, diverse,
+        “cool city” factor) +
+        Improvement in public infrastructure, e.g., new sidewalks, repaved roads, community centers, parks,
+        upgrading of utilities
+"""
+
+rubricg2 = """
+Q2: Explain TWO Ways that gentrification may negatively impact neightborhoods.
+
+A2: Displacement due to rising property values and rents; impacting less affluent, elderly, or marginalized groups +
+        Changing cultural landscape as modern or contemporary buildings take the place of traditional or historic
+        architecture +
+        Increased social tension due to changes in neighborhood characteristics, diversity, and opportunities +
+        Displacement may lead to increased homelessness +
+        Decrease in the number of homes available for rent that could impact low-income residents +
+        Changing businesses as small, locally-owned businesses are replaced with national or global chains,
+        franchises or companies with prohibitively expensive goods and services +
+        Shift in dwelling use from residential to commercial, or change in the type of available housing units, going from multifamily structures to single-family structures; or single-family structures to condominiums
+"""
+
 def format_rubric(rubric):
     rubric_dict = {}
     rubric.replace(" ", "")
@@ -110,7 +144,7 @@ def get_grade(studentresponseg, rubricg):
             rubricx.append(temparr)
 
     rubric = rubricx
-    nlp = spacy.load('en')
+    nlp = spacy.load('en_core_web_sm')
 
     returngrade = 0
     for n in rubric:
@@ -135,9 +169,8 @@ def get_grade(studentresponseg, rubricg):
     return returngrade
 
 def run():
-    rubric_dict = format_rubric(rubric)
-    answers = generate_answers(rubric_dict)
-    print(answers)
+    grade = get_grade(studentresponseg, rubricg)
+    print(grade)
 
 run()
 

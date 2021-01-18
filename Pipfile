@@ -19,6 +19,7 @@ psycopg2 = "*"
 nltk = "*"
 numpy = "*"
 scipy = "*"
+spacy = "*"
 
 [requires]
 python_version = "3.8"
