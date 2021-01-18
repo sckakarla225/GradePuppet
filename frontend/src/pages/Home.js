@@ -42,6 +42,10 @@ export const Home = (props) => {
         });
     }
 
+    const goToDashboard = () => {
+        props.history.push("/dashboard"); 
+    }
+
     return (
         <div>
             <Logo />
@@ -53,6 +57,7 @@ export const Home = (props) => {
                 handleNameChange={handleNameChange}
                 handleCourseChange={handleCourseChange}
                 handleSubmit={handleSubmit}
+                goToDashboard={goToDashboard}
             />
         </div>
     )

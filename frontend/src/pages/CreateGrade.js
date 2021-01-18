@@ -1,9 +1,23 @@
 import React, { useState, useContext } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+
+// COMPONENTS
+import { Grade } from '../components/Grades/Content'; 
 
 // CONTEXT
 import { GradeContext } from '../context/GradeContext';
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+      flexGrow: 1,
+    },
+}));
+
 export const CreateGrade = () => {
+    const classes = useStyles();
+
     const { teacher, assignments } = useContext(GradeContext); 
     const [studentName, setStudentName] = useState('');
     const [content, setContent] = useState(''); 
@@ -53,8 +67,15 @@ export const CreateGrade = () => {
     }
 
     return (
-        <div>
-            
+        <div style={{ backgroundColor: "" }}>
+            <Grid container spacing={4}>
+                <Grid item xs={12} sm={6}>
+                
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <Content />
+                </Grid>
+            </Grid>  
         </div>
     )
 }

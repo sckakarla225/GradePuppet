@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const EnterForm = ({ 
-    name, course, grade, handleNameChange, handleGradeChange, handleCourseChange, handleSubmit
+    name, course, grade, handleNameChange, handleGradeChange, handleCourseChange, handleSubmit, goToDashboard
 }) => {
     const classes = useStyles();
 
@@ -96,7 +96,9 @@ export const EnterForm = ({
             <button
                 type="submit"
                 className={classes.button}
-                onClick={handleSubmit}
+                onClick={() => {
+                    handleSubmit().then(() => goToDashboard())
+                }}
                 id="enter-form-button"
             >
                 GET STARTED!

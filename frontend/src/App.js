@@ -7,7 +7,6 @@ import { Home } from './pages/Home';
 import { Dashboard } from './pages/Dashboard'; 
 import { CreateAssignment } from './pages/CreateAssignment'; 
 import { CreateGrade } from './pages/CreateGrade'; 
-import { TeacherInfo } from './pages/TeacherInfo'; 
 import { StudentInfo } from './pages/StudentInfo'; 
 
 // CONTEXT
@@ -25,7 +24,6 @@ function App() {
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/assignment" component={CreateAssignment} />
                 <Route exact path="/grade" component={CreateGrade} />
-                <Route exact path="/teacher" component={TeacherInfo} />
                 <Route exact path="/student/:studentID" component={StudentInfo} />
             </Switch>
         </div>
