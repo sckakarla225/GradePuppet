@@ -1,0 +1,84 @@
+/* HOME */
+.logo-header {
+    margin-top: 30px; 
+    margin-left: 300px; 
+}
+
+#logo-header-title {
+    font-family: apertura, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 120px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 150px;
+}
+
+#logo-tagline {
+    font-family: apertura-condensed, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    margin-right: 50px; 
+    font-size: 40px; 
+    margin-top: -60px;
+}
+
+.logo-image {
+    height: 375px;
+    display: inline-block;
+}
+
+.enter-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 25px; 
+    height: 50px; 
+    width: 20px; 
+}
+
+.enter-form-container {
+    background-color: rgba(151, 206, 176, 0.3);
+    height: 400px; 
+    width: 600px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px; 
+    border-radius: 5px; 
+    padding-top: 15px;
+}
+
+#enter-form-header {
+    font-size: 25px; 
+    text-align: center;
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#enter-form-input {
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#enter-form-button { 
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* DASHBOARD */
+
+/* ASSIGNMENTS */
+
+/* GRADES */
+
+/* STUDENTS */
+
+/* TEACHERS */
+

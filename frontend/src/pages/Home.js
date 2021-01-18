@@ -1,6 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom'; 
 
+// COMPONENTS
+import { Logo } from '../components/Home/Logo'; 
+import { EnterForm } from '../components/Home/EnterForm'; 
+
 // CONTEXT
 import { GradeContext } from '../context/GradeContext'; 
 
@@ -35,14 +39,21 @@ export const Home = (props) => {
             console.log("Teacher created successfully!"); 
             setTeacher(data); 
             console.log(teacher);
-        }).then(() => {
-            props.history.push('/dashboard');
-        }); 
+        });
     }
 
     return (
         <div>
-            
+            <Logo />
+            <EnterForm
+                name={name}
+                course={course}
+                grade={grade}
+                handleGradeChange={handleGradeChange}
+                handleNameChange={handleNameChange}
+                handleCourseChange={handleCourseChange}
+                handleSubmit={handleSubmit}
+            />
         </div>
     )
 }

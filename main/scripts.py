@@ -63,6 +63,9 @@ def generate_answers(rubric_dict):
 
     return answers 
 
+def pre_process_answers(answers):
+    pass
+
 def run():
     rubric_dict = format_rubric(rubric)
     answers = generate_answers(rubric_dict)
