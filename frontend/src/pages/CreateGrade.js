@@ -2,6 +2,12 @@ import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+import { Link } from 'react-router-dom';
 
 // COMPONENTS
 import { Content } from '../components/Grades/Content'; 
@@ -11,7 +17,24 @@ import { GradeContext } from '../context/GradeContext';
 
 const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+        '& > *': {
+          margin: theme.spacing(1),
+          width: '25ch',
+        },
+    },
+    input: {
+        textAlign: 'center', 
+        width: 300,   
+        marginLeft: 200,
+    }, 
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+        width: 300,
+        marginLeft: 200,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
     },
 }));
 
@@ -70,7 +93,42 @@ export const CreateGrade = () => {
         <div style={{ backgroundColor: "" }}>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
-                
+                    <h1 id="enter-student-name">ENTER STUDENT NAME:</h1>
+                    <TextField 
+                        id="outlined-basic" 
+                        label="Student Name" 
+                        variant="outlined" 
+                        className={classes.input}
+                        id="enter-student-name-input"
+                    />
+                    <h1 id="pick-assignment">PICK ASSIGNMENT:</h1>
+                    <FormControl className={classes.formControl}>
+                        <InputLabel shrink id="demo-simple-select-placeholder-label-label">
+                            My Assignments
+                        </InputLabel>
+                        <Select
+                            labelId="demo-simple-select-placeholder-label-label"
+                            id="demo-simple-select-placeholder-label"
+                            
+                        
+                            displayEmpty
+                            className={classes.selectEmpty}
+                            id="pick-assignment-input"
+                        >
+                            <MenuItem value={6}>6</MenuItem>
+                            <MenuItem value={7}>7</MenuItem>
+                            <MenuItem value={8}>8</MenuItem>
+                            <MenuItem value={9}>9</MenuItem>
+                            <MenuItem value={10}>10</MenuItem>
+                            <MenuItem value={11}>11</MenuItem>
+                            <MenuItem value={12}>12</MenuItem>
+                        </Select>
+                    </FormControl>
+                    <h1 id="grade-box-header">THE GRADE:</h1>
+                    <div id="grade-box">
+                        <h1 id="grade-value">50</h1>
+                    </div>
+                    <Link to="/dashboard" id="continue-grade-button">CONTINUE</Link>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <Content />

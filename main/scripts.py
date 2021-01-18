@@ -1,8 +1,12 @@
 import re
+import spacy
+import nltk
 from collections import Counter
 from nltk.tokenize import word_tokenize, sent_tokenize
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import PorterStemmer, WordNetLemmatizer
+import numpy as np
+from scipy.spatial.distance import cosine
 
 # Assignment Name - Gentrification FRQ
 
@@ -42,6 +46,7 @@ def format_rubric(rubric):
     
     return rubric_dict
 
+
 def get_questions(rubric_dict):
     questions_dict = {}
 
@@ -50,6 +55,7 @@ def get_questions(rubric_dict):
             questions_dict[key] = value
 
     return questions_dict
+
 
 def generate_answers(rubric_dict):
     answers = []
@@ -63,8 +69,70 @@ def generate_answers(rubric_dict):
 
     return answers 
 
-def pre_process_answers(answers):
-    pass
+def get_part_of_speech(word):
+    probable_part_of_speech = wordnet.synsets(word)
+    pos_counts = Counter()
+    pos_counts["n"] = len(  [ item for item in probable_part_of_speech if item.pos()=="n"]  )
+    pos_counts["v"] = len(  [ item for item in probable_part_of_speech if item.pos()=="v"]  )
+    pos_counts["a"] = len(  [ item for item in probable_part_of_speech if item.pos()=="a"]  )
+    pos_counts["r"] = len(  [ item for item in probable_part_of_speech if item.pos()=="r"]  )
+    
+    most_likely_part_of_speech = pos_counts.most_common(1)[0][0]
+    return most_likely_part_of_speech
+
+
+def get_grade(studentresponseg, rubricg):
+    rubric = []
+
+    cleaned = re.sub('\W+', ' ', studentresponseg)
+    tokenized = word_tokenize(cleaned)
+
+    lemmatizer = WordNetLemmatizer()
+    studentresponseg = [lemmatizer.lemmatize(token, get_part_of_speech(token)) for token in tokenized]
+
+    for i in range(0, len(rubricg)- 1):
+        cleaned = re.sub('\W+', ' ', rubricg[i])
+        tokenized = word_tokenize(cleaned)
+        rubric.append( [lemmatizer.lemmatize(token, get_part_of_speech(token)) for token in tokenized])
+
+    stop_words = set(stopwords.words('english'))
+    studentresponse = []
+    for i in range(0, len(studentresponseg) - 1):
+        if studentresponseg[i] not in stop_words:
+            studentresponse.append(studentresponseg[i])
+
+    rubricx = []
+    for i in range(0, len(rubric) - 1):
+        temparr = []
+        for j in range(0, len(rubric[i])):
+            if rubric[i][j] not in stop_words:
+                temparr.append(rubric[i][j])
+            rubricx.append(temparr)
+
+    rubric = rubricx
+    nlp = spacy.load('en')
+
+    returngrade = 0
+    for n in rubric:
+        f = 0
+        z = []
+        for j in n: 
+            z2 = []
+            for q in studentresponse:
+                z2.append(cosine(nlp(q).vector, nlp(j).vector))
+            z.append(z2)
+        for n2 in z:
+            for n3 in n2:
+                if n3 < .2: 
+                    f += 1
+                elif n3 < .3:
+                    f += 0
+                else: 
+                    f -= .03
+            if f > .9:
+                returngrade = 1
+  
+    return returngrade
 
 def run():
     rubric_dict = format_rubric(rubric)

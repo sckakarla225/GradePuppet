@@ -17,6 +17,8 @@ djangorestframework-simplejwt = "*"
 djoser = "*"
 psycopg2 = "*"
 nltk = "*"
+numpy = "*"
+scipy = "*"
 
 [requires]
 python_version = "3.8"

@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 // CONTEXT
 import { GradeContext } from '../context/GradeContext';
@@ -13,6 +14,12 @@ const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
     },
+    input: {
+        textAlign: 'center', 
+        width: 700,   
+        marginLeft: 630,
+        marginBottom: -50, 
+    }, 
 }));
 
 export const CreateAssignment = () => {
@@ -49,9 +56,17 @@ export const CreateAssignment = () => {
         <div style={{ backgroundColor: "" }}>
             <Grid container spacing={4}>
                 <Grid item xs={12}>
-                
+                    <h1 id="enter-assignment-name">ENTER ASSIGNMENT NAME:</h1>
+                    <TextField 
+                        id="outlined-basic" 
+                        label="Assignment Name" 
+                        variant="outlined" 
+                        className={classes.input}
+                        id="enter-assignment-name-input"
+                    />
                 </Grid>
                 <Grid item xs={12}>
+                    <h1 id="create-rubric-here">CREATE YOUR RUBRIC HERE!</h1>
                     <Rubric />
                 </Grid>
             </Grid>  
