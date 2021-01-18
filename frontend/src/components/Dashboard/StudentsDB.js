@@ -19,7 +19,6 @@ const useStyles = makeStyles((theme) => ({
 
 export const StudentsDB = (props) => {
     const classes = useStyles(); 
-    const { useContext }
 
     const goToStudentPage = () => {
         

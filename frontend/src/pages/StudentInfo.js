@@ -1,8 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
+import "../App.css"; 
 import { useParams } from 'react-router-dom'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 // COMPONENTS
 import { StudentGrades } from '../components/Students/StudentGrades'; 
@@ -13,6 +15,13 @@ import { GradeContext } from '../context/GradeContext';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+    },
+    icon: {
+        fontSize: '80px',
+        marginRight: '10px',
+        marginLeft: '200px',
+        marginTop: '30px',
+        marginBottom: '-70px',
     },
 }));
 
@@ -45,10 +54,17 @@ export const StudentInfo = () => {
         <div style={{ backgroundColor: ''}}>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
-                
+                <ArrowBackIosIcon className={classes.icon}/>
+                    <div id="student-info-container">
+                        <p id="student-info-name-header">STUDENT NAME:</p>
+                        <h1 id="student-info-name">(student name)</h1>
+                    </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                
+                <div>
+                    <div class="numberCircle">93</div>
+                    <p id="class-mastery-level">Student Mastery Level</p>
+                </div>
                 </Grid>
                 <Grid item xs={12}>
                     <StudentGrades />

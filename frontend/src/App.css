@@ -162,5 +162,39 @@
 
 /* STUDENTS */
 
-/* TEACHERS */
+#student-info-container {
+    margin-left: 250px;
+    margin-top: 150px;
+}
 
+#student-info-name-header {
+    font-size: 25px;
+    font-family: hero-new, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#student-info-name {
+    font-size: 75px;
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+#students-grades-container {
+    height: 340px;
+    width: 1350px;
+    background-color: white;
+    margin-left: 250px;
+    margin-top: -20px;
+    border-radius: 20px; 
+    border: 2px solid black;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+#student-grade {
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
