@@ -17,43 +17,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const StudentsDB = (props) => {
+export const StudentsDB = ({ goToStudentPage, students }) => {
     const classes = useStyles(); 
-
-    const goToStudentPage = () => {
-        
-    }
 
     return (
         <div className="students-db-container">
             <h1 style={{ marginLeft: '20px' }}>MY STUDENTS</h1>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '550px', 
-                height: '50px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(student name)</p>
-                <ArrowForwardIosIcon className={classes.icon}/>
-            </div>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '550px', 
-                height: '50px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(student name)</p>
-                <ArrowForwardIosIcon className={classes.icon}/>
-            </div>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '550px', 
-                height: '50px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(student name)</p>
-                <ArrowForwardIosIcon className={classes.icon}/>
-            </div>
+            {students ? students.map((student) => (
+                <div style={{ 
+                    backgroundColor: 'gray', 
+                    width: '550px', 
+                    height: '50px', 
+                    marginLeft: '20px',
+                }}>
+                    <p className={classes.p}>{student.name}</p>
+                    <ArrowForwardIosIcon className={classes.icon} onClick={() => goToStudentPage(student.id)} />
+                </div>
+            )) : ""}
         </div>
     )
 }

@@ -31,10 +31,16 @@ class Grade(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     assignment = models.ForeignKey(Assignment, on_delete=models.CASCADE, default=1)
     content = models.TextField(blank=False, null=True)
-    grade = models.DecimalField(validators=[MinValueValidator(0.0), MaxValueValidator(100.00)], max_digits=5, decimal_places=2)
+    grade = models.DecimalField(validators=[MinValueValidator(0.0), MaxValueValidator(100.00)], max_digits=5, decimal_places=2, blank=True, null=True)
 
-    def __str__(self):
-        return self.grade + "- " + self.student
+    # def __str__(self):
+    #     return self.grade + "- " + self.student
+
+
+# PROBLEMS
+# create_assignment/ - API
+# add_grade/ - API
+# (both are issues with text area field)
 
     
 

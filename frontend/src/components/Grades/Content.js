@@ -19,16 +19,24 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const Content = () => {
+export const Content = ({ setContent, content, onGradeClick }) => {
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
             <Paper elevation={3} className={classes.paper}>
                 <h1 id="student-answers-header">Enter Student Answers Here:</h1>
-                <textarea placeholder="Paste Content Here" id="content-box" row="10" columns="50" >
+                <textarea 
+                    placeholder="Paste Content Here" 
+                    id="content-box" 
+                    row="10" 
+                    columns="50" 
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                >
 
                 </textarea>
+                <button onClick={() => onGradeClick()}>GRADE</button>
             </Paper>
         </div>
     );

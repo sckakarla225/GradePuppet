@@ -22,39 +22,23 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-export const StudentGrades = () => {
+export const StudentGrades = ({ studentGrades }) => {
     const classes = useStyles(); 
 
     return (
         <div id="students-grades-container">
             <h1 style={{ marginLeft: '20px' }}>GRADES</h1>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '1250px', 
-                height: '65px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(assignment name)</p>
-                <p className={classes.grade} id="student-grade">(grade)</p>
-            </div>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '1250px', 
-                height: '65px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(assignment name)</p>
-                <p className={classes.grade} id="student-grade">(grade)</p>
-            </div>
-            <div style={{ 
-                backgroundColor: 'gray', 
-                width: '1250px', 
-                height: '65px', 
-                marginLeft: '20px',
-            }}>
-                <p className={classes.p}>(assignment name)</p>
-                <p className={classes.grade} id="student-grade">(grade)</p>
-            </div>
+            {studentGrades ? studentGrades.map((grade) => (
+                <div style={{ 
+                    backgroundColor: 'gray', 
+                    width: '1250px', 
+                    height: '65px', 
+                    marginLeft: '20px',
+                }}>
+                    <p className={classes.p}>{grade.assignment.name}</p>
+                    <p className={classes.grade} id="student-grade">{grade.grade}</p>
+                </div>
+            )) : ""}
         </div>
     )
 }

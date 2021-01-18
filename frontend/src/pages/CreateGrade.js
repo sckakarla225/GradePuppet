@@ -44,7 +44,7 @@ export const CreateGrade = () => {
     const { teacher, assignments } = useContext(GradeContext); 
     const [studentName, setStudentName] = useState('');
     const [content, setContent] = useState(''); 
-    const [isLoading, setIsLoading] = useState(true); 
+    // const [isLoading, setIsLoading] = useState(true); 
     const [grade, setGrade] = useState(0); 
 
     const [assignment, setAssignment] = useState({}); 
@@ -100,6 +100,8 @@ export const CreateGrade = () => {
                         variant="outlined" 
                         className={classes.input}
                         id="enter-student-name-input"
+                        value={studentName}
+                        onChange={(e) => setStudentName(e.target.value)}
                     />
                     <h1 id="pick-assignment">PICK ASSIGNMENT:</h1>
                     <FormControl className={classes.formControl}>
@@ -114,14 +116,11 @@ export const CreateGrade = () => {
                             displayEmpty
                             className={classes.selectEmpty}
                             id="pick-assignment-input"
+                            onChange={(e) => setAssignment(e.target.value)}
                         >
-                            <MenuItem value={6}>6</MenuItem>
-                            <MenuItem value={7}>7</MenuItem>
-                            <MenuItem value={8}>8</MenuItem>
-                            <MenuItem value={9}>9</MenuItem>
-                            <MenuItem value={10}>10</MenuItem>
-                            <MenuItem value={11}>11</MenuItem>
-                            <MenuItem value={12}>12</MenuItem>
+                            {assignments.map((assignment) => (
+                               <MenuItem value={assignment}>{assignment.name}</MenuItem> 
+                            ))}
                         </Select>
                     </FormControl>
                     <h1 id="grade-box-header">THE GRADE:</h1>
@@ -131,7 +130,7 @@ export const CreateGrade = () => {
                     <Link to="/dashboard" id="continue-grade-button">CONTINUE</Link>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Content />
+                    <Content content={content} setContent={setContent} onGradeClick={onGradeClick} />
                 </Grid>
             </Grid>  
         </div>

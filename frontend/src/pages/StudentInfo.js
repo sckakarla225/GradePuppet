@@ -67,7 +67,7 @@ export const StudentInfo = () => {
                 </div>
                 </Grid>
                 <Grid item xs={12}>
-                    <StudentGrades />
+                    <StudentGrades studentGrades={studentGrades} />
                 </Grid>
             </Grid>
         </div>

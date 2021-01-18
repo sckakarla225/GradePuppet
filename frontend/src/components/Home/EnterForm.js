@@ -97,7 +97,8 @@ export const EnterForm = ({
                 type="submit"
                 className={classes.button}
                 onClick={() => {
-                    handleSubmit().then(() => goToDashboard())
+                    handleSubmit();
+                    goToDashboard();
                 }}
                 id="enter-form-button"
             >

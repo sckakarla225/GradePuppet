@@ -23,11 +23,11 @@ export const Dashboard = (props) => {
 
     const { teacher, students, getAssignments, getGrades, getStudents } = useContext(GradeContext); 
 
-    useEffect(() => {
-        getAssignments(teacher.id); 
-        getGrades(teacher.id); 
-        getStudents(teacher.id); 
-    }, []); 
+    if (teacher) {
+      getAssignments(teacher.id); 
+      getGrades(teacher.id); 
+      getStudents(teacher.id); 
+    }
 
     const studentPage = (studentID) => {
       props.history.push(`/student/${studentID}`);
@@ -41,7 +41,7 @@ export const Dashboard = (props) => {
                   <ClassMastery />
                 </div>
                 <div>
-                  <StudentsDB />
+                  <StudentsDB students={students ? students : ""} goToStudentPage={studentPage} />
                 </div>
             </Grid>
             <Grid item xs={12} sm={7}>
