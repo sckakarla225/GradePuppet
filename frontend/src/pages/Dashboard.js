@@ -23,18 +23,21 @@ export const Dashboard = (props) => {
 
     const { teacher, students, getAssignments, getGrades, getStudents } = useContext(GradeContext); 
 
-    if (teacher) {
-      getAssignments(teacher.id); 
-      getGrades(teacher.id); 
-      getStudents(teacher.id); 
-    }
+    useEffect(() => {
+      if (teacher !== {}) {
+        getAssignments(teacher.id); 
+        getGrades(teacher.id); 
+        getStudents(teacher.id); 
+        console.log(teacher.id)
+      }
+    }, [])
 
     const studentPage = (studentID) => {
-      props.history.push(`/student/${studentID}`);
+      props.history.push('/student');
     }
 
     return (
-      <div style={{ backgroundColor: ''}}>
+      <div style={{ backgroundColor: '#0ca559'}}>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={5}>
                 <div>

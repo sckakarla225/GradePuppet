@@ -76,9 +76,6 @@ export const CreateGrade = () => {
             console.log(data); 
             console.log("Grade added successfully!"); 
             setGrade(data.grade); 
-            if (grade !== 0) {
-                setIsLoading(false); 
-            } 
         });
     }
 
@@ -90,7 +87,7 @@ export const CreateGrade = () => {
     }
 
     return (
-        <div style={{ backgroundColor: "" }}>
+        <div style={{ backgroundColor: "#0ca559" }}>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
                     <h1 id="enter-student-name">ENTER STUDENT NAME:</h1>
@@ -125,7 +122,7 @@ export const CreateGrade = () => {
                     </FormControl>
                     <h1 id="grade-box-header">THE GRADE:</h1>
                     <div id="grade-box">
-                        <h1 id="grade-value">50</h1>
+                        <h1 id="grade-value">{grade ? grade : ""}</h1>
                     </div>
                     <Link to="/dashboard" id="continue-grade-button">CONTINUE</Link>
                 </Grid>

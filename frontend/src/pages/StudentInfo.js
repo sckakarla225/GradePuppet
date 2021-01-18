@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import "../App.css"; 
-import { useParams } from 'react-router-dom'; 
+import { useParams, useHistory } from 'react-router-dom'; 
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const StudentInfo = () => {
     const classes = useStyles();
+    const history = useHistory();
 
     const { studentID } = useParams(); 
     const { students } = useContext(GradeContext); 
@@ -51,13 +52,13 @@ export const StudentInfo = () => {
     }, []); 
 
     return (
-        <div style={{ backgroundColor: ''}}>
+        <div style={{ backgroundColor: '#0ca559'}}>
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6}>
-                <ArrowBackIosIcon className={classes.icon}/>
+                <ArrowBackIosIcon className={classes.icon} onClick={() => history.push('/dashboard')} />
                     <div id="student-info-container">
                         <p id="student-info-name-header">STUDENT NAME:</p>
-                        <h1 id="student-info-name">(student name)</h1>
+                        <h1 id="student-info-name">{student.name}</h1>
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>

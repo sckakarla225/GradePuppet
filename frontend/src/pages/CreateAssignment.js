@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+import { Link } from 'react-router-dom';
 
 // CONTEXT
 import { GradeContext } from '../context/GradeContext';
@@ -20,6 +22,11 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: 630,
         marginBottom: -50, 
     }, 
+    icon: {
+        fontSize: '65px',
+        marginTop: '10px',
+        marginLeft: '470px',
+    },
 }));
 
 export const CreateAssignment = (props) => {
@@ -60,7 +67,7 @@ export const CreateAssignment = (props) => {
     }
     
     return (
-        <div style={{ backgroundColor: "" }}>
+        <div style={{ backgroundColor: "rgba(151, 206, 176, 0.3)" }}>
             <Grid container spacing={4}>
                 <Grid item xs={12}>
                     <h1 id="enter-assignment-name">ENTER ASSIGNMENT NAME:</h1>

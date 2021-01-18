@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'; 
+import { useHistory } from 'react-router-dom';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { makeStyles } from '@material-ui/core/styles';
 import '../../App.css';
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
 export const StudentsDB = ({ goToStudentPage, students }) => {
     const classes = useStyles(); 
+    const history = useHistory();
 
     return (
         <div className="students-db-container">
@@ -31,9 +33,11 @@ export const StudentsDB = ({ goToStudentPage, students }) => {
                     marginLeft: '20px',
                 }}>
                     <p className={classes.p}>{student.name}</p>
-                    <ArrowForwardIosIcon className={classes.icon} onClick={() => goToStudentPage(student.id)} />
+                    <ArrowForwardIosIcon className={classes.icon} onClick={() => goToStudentPage(student.id)}  />
                 </div>
             )) : ""}
         </div>
     )
 }
+
+

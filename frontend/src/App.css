@@ -47,7 +47,7 @@
     margin-right: auto;
     justify-content: center;
     align-items: center;
-    margin-top: 75px; 
+    margin-top: 25px; 
     border-radius: 5px; 
     padding-top: 15px;
 }
@@ -83,6 +83,7 @@
     border: 2px solid #666;
     color: #666;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
     font-size: 250px;
     font-family: hero-new, sans-serif;
@@ -107,7 +108,7 @@
     margin-left: 170px;
     margin-top: 45px;
     border-radius: 20px; 
-    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: auto;
     padding-bottom: 15px;
 }
@@ -119,7 +120,7 @@
     margin-left: 55px;
     margin-top: 45px;
     border-radius: 20px; 
-    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: auto;
     padding-bottom: 15px;
 }
@@ -131,7 +132,7 @@
     margin-left: 55px;
     margin-top: 45px;
     border-radius: 20px; 
-    border: 2px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     overflow: auto;
     padding-bottom: 15px;
 }
@@ -223,7 +224,7 @@
 #grade-box {
     height: 150px;
     width: 300px;
-    background-color:rgba(151, 206, 176, 0.3);
+    background-color: whitesmoke;
     margin-left: 200px;
     margin-bottom: 15px;
     padding-top: 0px;
