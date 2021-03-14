@@ -26,6 +26,10 @@ export const Home = (props) => {
         setCourse(e.target.value); 
     }
 
+    const goToDashboard = () => {
+        props.history.push("/dashboard"); 
+    }
+
     const handleSubmit = () => {
         fetch('http://127.0.0.1:8000/api/create_teacher/', {
             method: 'POST', 
@@ -38,15 +42,15 @@ export const Home = (props) => {
             console.log("Teacher created successfully!"); 
             setTeacher(data); 
             console.log(teacher);
+        }).then(() => {
+            if (teacher !== {}) {
+                goToDashboard();
+            }
         });
     }
 
-    const goToDashboard = () => {
-        props.history.push("/dashboard"); 
-    }
-
     return (
-        <div>
+        <div style={{  }}>
             <Logo />
             <EnterForm
                 name={name}
@@ -56,7 +60,6 @@ export const Home = (props) => {
                 handleNameChange={handleNameChange}
                 handleCourseChange={handleCourseChange}
                 handleSubmit={handleSubmit}
-                goToDashboard={goToDashboard}
             />
         </div>
     )

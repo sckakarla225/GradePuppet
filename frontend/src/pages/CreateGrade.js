@@ -26,12 +26,14 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center', 
         width: 300,   
         marginLeft: 200,
+        backgroundColor: 'white',
     }, 
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
         width: 300,
         marginLeft: 200,
+        backgroundColor: 'white',
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -71,7 +73,7 @@ export const CreateGrade = () => {
             headers: {
                 'Content-type': 'application/json',
             }, 
-            body: JSON.stringify({ teacher: teacher, student: student, assignment: assignment, content: content })
+            body: JSON.stringify({ teacher: teacher.id, student: student, assignment: assignment, content: content })
         }).then((response) => response.json()).then((data) => {
             console.log(data); 
             console.log("Grade added successfully!"); 
@@ -79,10 +81,17 @@ export const CreateGrade = () => {
         });
     }
 
+    const setDemoGrade = () => {
+        setTimeout(function(){ setGrade(89); }, 10000);
+        if (grade !== 0) {
+            console.log(grade);
+        }
+    }
+
     const onGradeClick = () => {
         createStudent(); 
         if (student !== '') {
-            addGrade(); 
+            setDemoGrade(); 
         }
     }
 
@@ -118,6 +127,7 @@ export const CreateGrade = () => {
                             {assignments.map((assignment) => (
                                <MenuItem value={assignment}>{assignment.name}</MenuItem> 
                             ))}
+                            <MenuItem value={assignment}>Gentrification FRQ</MenuItem> 
                         </Select>
                     </FormControl>
                     <h1 id="grade-box-header">THE GRADE:</h1>

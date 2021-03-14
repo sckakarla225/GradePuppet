@@ -24,8 +24,7 @@ function App() {
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/assignment" component={CreateAssignment} />
                 <Route exact path="/grade" component={CreateGrade} />
-                {/* <Route exact path="/student/:studentID" component={StudentInfo} /> */}
-                <Route exact path="/student" component={StudentInfo} />
+                <Route exact path="/student/:studentID" component={StudentInfo} />
             </Switch>
         </div>
       </Router>

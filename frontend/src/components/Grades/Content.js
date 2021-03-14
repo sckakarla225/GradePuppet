@@ -33,10 +33,11 @@ export const Content = ({ setContent, content, onGradeClick }) => {
                     columns="50" 
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
+                    style={{ resize:"none", height: "600px", width: "600px" }}
                 >
 
                 </textarea>
-                <button onClick={() => onGradeClick()}>GRADE</button>
+                <button onClick={() => onGradeClick()} id="grade-assignment-now-button">GRADE</button>
             </Paper>
         </div>
     );

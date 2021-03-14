@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
         width: 700,   
         marginLeft: 630,
         marginBottom: -50, 
+        backgroundColor: 'white',
     }, 
     icon: {
         fontSize: '65px',
@@ -67,7 +68,7 @@ export const CreateAssignment = (props) => {
     }
     
     return (
-        <div style={{ backgroundColor: "rgba(151, 206, 176, 0.3)" }}>
+        <div style={{ backgroundColor: "#0ca559", height: '100vh' }}>
             <Grid container spacing={4}>
                 <Grid item xs={12}>
                     <h1 id="enter-assignment-name">ENTER ASSIGNMENT NAME:</h1>
@@ -84,7 +85,7 @@ export const CreateAssignment = (props) => {
                 <Grid item xs={12}>
                     <h1 id="create-rubric-here">CREATE YOUR RUBRIC HERE!</h1>
                     <div style={{
-            backgroundColor:'green',
+            backgroundColor:'rgba(151, 206, 176, 0.3)',
             height: '375px', 
             width: '1000px',
             margin: 'auto',

@@ -23,17 +23,20 @@ export const Dashboard = (props) => {
 
     const { teacher, students, getAssignments, getGrades, getStudents } = useContext(GradeContext); 
 
+    // FOR DEMO
+    const teacher_id = 18; 
+
     useEffect(() => {
       if (teacher !== {}) {
-        getAssignments(teacher.id); 
-        getGrades(teacher.id); 
-        getStudents(teacher.id); 
-        console.log(teacher.id)
+        console.log(teacher.id);
+        getAssignments(teacher_id); 
+        getGrades(teacher_id); 
+        getStudents(teacher_id); 
       }
-    }, [])
+    }, []);
 
     const studentPage = (studentID) => {
-      props.history.push('/student');
+      props.history.push(`/student/${studentID}`);
     }
 
     return (

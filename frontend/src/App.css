@@ -39,7 +39,7 @@
 }
 
 .enter-form-container {
-    background-color: rgba(151, 206, 176, 0.3);
+    background-color: #0ca559;
     height: 400px; 
     width: 600px; 
     display: block;
@@ -50,6 +50,7 @@
     margin-top: 25px; 
     border-radius: 5px; 
     padding-top: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #enter-form-header {
@@ -187,14 +188,17 @@
 
 #create-assignment-button {
     text-decoration: none;
-    height: 75px;
-    width: 125px;
-    background-color:rgba(151, 206, 176, 0.3);
+    height: 95px;
+    width: 185px;
+    background-color:white;
     text-align: center;
     font-size: 45px;
     color: black;
-    margin-top: 60px;
-    margin-left: 280px;
+    margin-top: 100px;
+    margin-left: 260px;
+    font-family: hero-new, sans-serif;
+    font-weight: 700;
+    font-style: normal;  
 }
 
 #rubric-text-area {
@@ -289,6 +293,18 @@
     font-size: 25px;
     color: black;
     margin-left: 200px;
+}
+
+#grade-assignment-now-button {
+    margin-top: 0px;
+    text-decoration: none;
+    height: 75px;
+    width: 125px;
+    background-color:rgba(151, 206, 176, 0.3);
+    text-align: center;
+    font-size: 25px;
+    color: black;
+    margin-left: 525px;
 }
 
 /* STUDENTS */

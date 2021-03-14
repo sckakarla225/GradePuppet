@@ -46,8 +46,9 @@ export const StudentInfo = () => {
     }
 
     useEffect(() => {
-        const student = students.find(student => student.id === studentID); 
-        setStudent(student); 
+        const current_student = students.find(student => student.id === studentID); 
+        setStudent(current_student); 
+        console.log(student);
         getStudentGrades(); 
     }, []); 
 
@@ -58,7 +59,7 @@ export const StudentInfo = () => {
                 <ArrowBackIosIcon className={classes.icon} onClick={() => history.push('/dashboard')} />
                     <div id="student-info-container">
                         <p id="student-info-name-header">STUDENT NAME:</p>
-                        <h1 id="student-info-name">{student.name}</h1>
+                        <h1 id="student-info-name">{student ? student.name : "Micheal Scott"}</h1>
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6}>

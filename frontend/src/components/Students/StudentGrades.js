@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import '../../App.css';
+
+import { GradeContext } from '../../context/GradeContext'; 
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -23,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const StudentGrades = ({ studentGrades }) => {
+    const { assignments } = useContext(GradeContext); 
     const classes = useStyles(); 
 
     return (
@@ -35,8 +38,10 @@ export const StudentGrades = ({ studentGrades }) => {
                     height: '65px', 
                     marginLeft: '20px',
                 }}>
-                    <p className={classes.p}>{grade.assignment.name}</p>
-                    <p className={classes.grade} id="student-grade">{grade.grade}</p>
+                    <p className={classes.p}>{grade ? 
+                        assignments.find(assignment => assignment.id === grade.assignment).name
+                    : ""}</p>
+                    <p className={classes.grade} id="student-grade">{grade ? grade.grade : ""}</p>
                 </div>
             )) : ""}
         </div>

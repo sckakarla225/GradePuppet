@@ -26,7 +26,7 @@ class StudentSerializer(serializers.ModelSerializer):
 class GetGradesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Grade
-        fields = ('id', 'teacher', 'student', 'content', 'grade')
+        fields = ('id', 'teacher', 'student', 'content', 'grade', 'assignment')
 
 class AddGradeSerializer(serializers.ModelSerializer):
     class Meta:

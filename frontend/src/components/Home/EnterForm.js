@@ -14,6 +14,7 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center', 
         width: 300,   
         margin: 5,
+        backgroundColor: 'white',
     }, 
     button: {
         display: 'block', 
@@ -24,12 +25,14 @@ const useStyles = makeStyles((theme) => ({
         fontSize: 30,
         textDecoration: 'none', 
         border: 'none', 
-        backgroundColor: '#0ca559',
+        backgroundColor: 'rgba(151, 206, 176, 0.7)',
     }, 
     formControl: {
         margin: theme.spacing(1),
         minWidth: 120,
         width: 300,
+        backgroundColor: 'white',
+        
     },
     selectEmpty: {
         marginTop: theme.spacing(2),
@@ -37,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const EnterForm = ({ 
-    name, course, grade, handleNameChange, handleGradeChange, handleCourseChange, handleSubmit, goToDashboard
+    name, course, grade, handleNameChange, handleGradeChange, handleCourseChange, handleSubmit,
 }) => {
     const classes = useStyles();
 
@@ -98,7 +101,6 @@ export const EnterForm = ({
                 className={classes.button}
                 onClick={() => {
                     handleSubmit();
-                    goToDashboard();
                 }}
                 id="enter-form-button"
             >
