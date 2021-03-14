@@ -1,3 +1,4 @@
 # GradePuppet
 ## AI Grading and Student Analytics App
-Hackdemonium 1-15 - 1-17 Submission 
+ThetaHacks, OrionHacks, and SigmoidHacks 1-15 - 1-18 Submission 
+Microsoft ImagineCup 2021 Submission
